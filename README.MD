@@ -81,14 +81,8 @@ Example of how to add a new config, remember this goes inside of lazy, which sta
 ```lua
 require("lazy").setup({
     {
-        -- GITHUB LINK GOES HERE:
-        'github link goes here',
-
-        -- CONFIGURE YOUR PLUGIN HERE
-        config = function()
-            require("github")
-        end
-    },
+        whatever the github repo tells you to copy and paste goes here usually.
+    }
 })
 ```
 Try adding a different colorscheme and use the vim.cmd call to change it to something else. use `/` and search for moonlight to see how its been setup in `init.lua`
