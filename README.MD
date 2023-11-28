@@ -3,6 +3,9 @@ barebone-nvim is meant to be the absolute bare minimum (in my opinion) of what y
 
 ![Screenshot](https://i.imgur.com/hb2RNzX.png)
 
+# Why?
+People were having issues with kickstart and customizing it and I wanted to try to create something that would fill as even less than kickstart, something even more barebone, a skeleton configuration to get people going. This is still a work in progress, thank you.
+
 # Requirements:
 - [Neovim](https://github.com/neovim/neovim) stable or nightly -> check latest neovim releases.
 - [Lua-language-server](https://github.com/LuaLS/lua-language-server) (Manually or via mason with `:MasonInstall`) -> The language server needs to be in PATH.
@@ -14,7 +17,6 @@ barebone-nvim is meant to be the absolute bare minimum (in my opinion) of what y
 ```
 git clone https://github.com/leet0rz/barebone-nvim ~/.config/nvim
 ```
-
 # Windows:
 ```
 git clone https://github.com/leet0rz/barebone-nvim $HOME\AppData\Local\nvim
