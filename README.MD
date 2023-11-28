@@ -4,7 +4,7 @@ barebone-nvim is meant to be the absolute bare minimum (in my opinion) of what y
 ![Screenshot](https://i.imgur.com/hb2RNzX.png)
 
 # Why?
-People were having issues with kickstart and customizing it and I wanted to try to create something that would fill as even less than kickstart, something even more barebone, a skeleton configuration to get people going. This is still a work in progress, thank you.
+People were having issues with kickstart and customizing it and I wanted to try to create something that would fill that spot between complete beginner and kickstart, even more barebone, as a skeleton configuration to get people going. This is still a work in progress, thank you.
 
 # Requirements:
 - [Neovim](https://github.com/neovim/neovim) stable or nightly -> check latest neovim releases.
