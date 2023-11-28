@@ -1,5 +1,6 @@
 # barebone-nvim
-barebone-nvim is meant to be the absolute bare minimum (in my opinion) of what you need to launch your own config. I tried making it with as much oversight as possible for newer users to see what lets say the Oil plugin looks like and where it starts and where it ends. Hopefully this will give some more understanding in terms of adding your own later, same with settings, remaps, plugin remaps and autocmds below.
+barebone-nvim is meant to be the absolute bare minimum (in my opinion) of what you need to launch your own config. 
+I tried making it with as much oversight as possible for newer users to see what lets say the Oil plugin looks like and where it starts and where it ends. Hopefully this will give some more understanding in terms of adding your own later, same with settings, remaps, plugin remaps and autocmds below.
 
 ![Screenshot](https://i.imgur.com/hb2RNzX.png)
 
@@ -84,7 +85,7 @@ Commenting:
 
 # Further developing your configuration
 ### Modulizing
-Try adding a lua folder where your init.lua is then create a new file instead that lua folder to modulize your config.
+Try adding a lua folder where your init.lua is, then create a new file and put remaps in that file then require it from your init.lua
 
 ### Adding new plugins
 Example of how to add a new plugin, remember this goes inside of lazy, which starts on line 26:
