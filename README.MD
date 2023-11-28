@@ -4,9 +4,9 @@ barebone-nvim is meant to be the absolute bare minimum (in my opinion) of what y
 ![Screenshot](https://i.imgur.com/hb2RNzX.png)
 
 # Requirements:
-- [neovim](https://github.com/neovim/neovim) stable or nightly -> check latest neovim releases.
-- [lua-language-server](https://github.com/LuaLS/lua-language-server) (Manually or via mason with `:MasonInstall`) -> The language server needs to be in PATH.
-- [ripgrep](https://github.com/BurntSushi/ripgrep), also recommend installing [fzf](https://github.com/junegunn/fzf)
+- [Neovim](https://github.com/neovim/neovim) stable or nightly -> check latest neovim releases.
+- [Lua-language-server](https://github.com/LuaLS/lua-language-server) (Manually or via mason with `:MasonInstall`) -> The language server needs to be in PATH.
+- [Ripgrep](https://github.com/BurntSushi/ripgrep), also recommend installing [fzf](https://github.com/junegunn/fzf)
 - A C compiler ([zig](https://ziglang.org/download/) for Windows)
 
 # Installation:
