@@ -47,6 +47,9 @@ choco install zig
 ### Feel free to rebind any of these to your liking
 
 ```
+0=============================================================================================0
+Remaps:
+0=============================================================================================0
 Ctrl + s: Save file
 Ctrl + k: Move up 1 page  center screen
 Ctrl + j: Move down 1 page and center screen
@@ -60,7 +63,8 @@ Shift + Arrow keys: Resize splits
 <: Unindent selected text
 Space + h: Remove search highlight
 
-
+0=============================================================================================0
+Plugin remaps:
 0=============================================================================================0
 Lazy:
 Space + l: Open Lazy
