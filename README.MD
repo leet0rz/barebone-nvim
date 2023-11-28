@@ -77,17 +77,19 @@ Commenting:
 ```
 
 # Further developing your configuration
-Example of how to add a new config:
+Example of how to add a new config, remember this goes inside of lazy, which starts on line 26:
 ```lua
 require("lazy").setup({
-    -- GITHUB LINK GOES HERE:
-    'github link goes here'
+    {
+        -- GITHUB LINK GOES HERE:
+        'github link goes here',
 
-    -- CONFIGURE YOUR PLUGIN HERE
-    config = function()
-        require("github")
-    end
+        -- CONFIGURE YOUR PLUGIN HERE
+        config = function()
+            require("github")
+        end
+    },
 })
 ```
-
+Try adding a different colorscheme and use the vim.cmd call to change it to something else.
 # 
