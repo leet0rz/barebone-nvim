@@ -19,7 +19,7 @@ git clone https://github.com/leet0rz/barebone-nvim ~/.config/nvim
 ```
 git clone https://github.com/leet0rz/barebone-nvim $HOME\AppData\Local\nvim
 ```
-Uncomment the following line under treesitter:
+Uncomment the following line under treesitter, inside the init.lua file:
 
 ```-- require('nvim-treesitter.install').compilers = { "zig" }```
 
@@ -32,7 +32,7 @@ choco install zig
 ```
 
 # Plugins:
-- moonlight.nvim
+- modified moonlight.nvim
 - nvim-autopairs
 - nvim-comment
 - telescope.nvim
@@ -60,6 +60,7 @@ Shift + Arrow keys: Resize splits
 <: Unindent selected text
 Space + h: Remove search highlight
 
+
 0=============================================================================================0
 Lazy:
 Space + l: Open Lazy
@@ -75,3 +76,18 @@ Commenting:
 ' - comment one or more lines
 ```
 
+# Further developing your configuration
+Example of how to add a new config:
+```lua
+require("lazy").setup({
+    -- GITHUB LINK GOES HERE:
+    'github link goes here'
+
+    -- CONFIGURE YOUR PLUGIN HERE
+    config = function()
+        require("github")
+    end
+})
+```
+
+# 
