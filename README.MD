@@ -91,5 +91,5 @@ require("lazy").setup({
     },
 })
 ```
-Try adding a different colorscheme and use the vim.cmd call to change it to something else.
+Try adding a different colorscheme and use the vim.cmd call to change it to something else. use `/` and search for moonlight to see how its been setup in `init.lua`
 # 
