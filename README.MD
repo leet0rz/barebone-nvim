@@ -81,7 +81,7 @@ Example of how to add a new config, remember this goes inside of lazy, which sta
 ```lua
 require("lazy").setup({
     {
-        whatever the github repo tells you to copy and paste goes here usually.
+        -- whatever the github repo tells you to copy and paste goes here usually.
     }
 })
 ```
