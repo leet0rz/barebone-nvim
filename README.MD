@@ -1,7 +1,7 @@
 # barebone-nvim
 barebone-nvim is meant to be the absolute bare minimum (in my opinion) of what you need to launch your own config.
 
-![Screenshot](https://i.imgur.com/FCA20w3.png)
+![Screenshot](https://i.imgur.com/hb2RNzX.png)
 
 # Requirements:
 - [neovim](https://github.com/neovim/neovim) stable or nightly -> check latest neovim releases.
