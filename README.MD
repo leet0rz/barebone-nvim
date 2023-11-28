@@ -83,6 +83,10 @@ Commenting:
 ```
 
 # Further developing your configuration
+### Modulizing
+Try adding a lua folder where your init.lua is then create a new file instead that lua folder to modulize your config.
+
+### Adding new plugins
 Example of how to add a new plugin, remember this goes inside of lazy, which starts on line 26:
 ```lua
 require("lazy").setup({
@@ -93,6 +97,8 @@ require("lazy").setup({
 ```
 Try adding a different colorscheme and use the vim.cmd call to change it to something else. use `/` and search for moonlight to see how its been setup in `init.lua`
 
-After that try adding a remap, remember `vim.keymap.set` is in a variable as `rm` just to make it easier to create remaps.
 
+### Adding new remaps
+
+After that try adding a remap, remember `vim.keymap.set` is in a variable as `rm` just to make it easier to create remaps.
 # Thanks for using barebone-nvim!
