@@ -74,10 +74,8 @@ require("lazy").setup({
             require("oil").setup({
                 default_file_explorer = true,
                 keymaps = {
-                    ["<BS>"] = "actions.parent",
                     ["<C-s>"] = ":w!<CR>",
                 },
-                prompt_save_on_select_new_entry = false,
                 view_options = { show_hidden = true },
             })
         end

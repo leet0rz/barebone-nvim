@@ -79,6 +79,8 @@ Space + fg: live grep
 
 Oil:
 Space + o: run Oil
+Enter: open file/folder
+-: Go to parent folder
 
 Commenting:
 ' - comment one or more lines
