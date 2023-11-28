@@ -92,4 +92,7 @@ require("lazy").setup({
 })
 ```
 Try adding a different colorscheme and use the vim.cmd call to change it to something else. use `/` and search for moonlight to see how its been setup in `init.lua`
-# 
+
+After that try adding a remap, remember `vim.keymap.set` is in a variable as `rm` just to make it easier to create remaps.
+
+# Thanks for using barebone-nvim!
