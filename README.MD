@@ -83,7 +83,7 @@ Commenting:
 ```
 
 # Further developing your configuration
-Example of how to add a new config, remember this goes inside of lazy, which starts on line 26:
+Example of how to add a new plugin, remember this goes inside of lazy, which starts on line 26:
 ```lua
 require("lazy").setup({
     {
