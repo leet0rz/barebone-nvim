@@ -91,7 +91,7 @@ Commenting:
 Try adding a lua folder where your init.lua is, then create a new file and put remaps in that file then require it from your init.lua
 
 ### Adding new plugins
-Example of how to add a new plugin, remember this goes inside of lazy, which starts on line 26:
+Example of how to add a new plugin, remember this goes inside of lazy, which starts on line 21:
 ```lua
 require("lazy").setup({
     {
@@ -101,7 +101,16 @@ require("lazy").setup({
 ```
 Try adding a different colorscheme and use the vim.cmd call to change it to something else. use `/` and search for moonlight to see how its been setup in `init.lua`
 
-
+### Adding new language servers
+[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L155-L176) would be considered lua's language server call and config. [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md) is a list of supported language server via lspconfig's repo, look them up before trying to add a new server. Adding a new one would look something like this:
+```
+lspconfig.YOURSERVER.setup({
+   on_attach = custom_attach,
+   capabilities = capabilities
+   COPY PASTE SERVER SETTINGS HERE
+})
+```
+Just make sure its within the confines lpsconfig's `config = function()` and `end`. Remember "lspconfig" is a variable, `local lspconfig = require('lspconfig')` on_attach is usually self-defined options or rules you would like to apply to that language server while capabilities is just additional capabilities from each of the servers.
 ### Adding new remaps
 
 After that try adding a remap, remember `vim.keymap.set` is in a variable as `rm` just to make it easier to create remaps.

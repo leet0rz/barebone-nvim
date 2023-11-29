@@ -152,7 +152,7 @@ require("lazy").setup({
             -- █░░ █░█ ▄▀█
             -- █▄▄ █▄█ █▀█
             --0=============================================================================================0
-            lspconfig.lua_ls.setup {
+            lspconfig.lua_ls.setup ({
                 on_attach = custom_attach,
                 capabilities = capabilities,
                 settings = {
@@ -173,7 +173,13 @@ require("lazy").setup({
                         telemetry = { enabled = false },
                     },
                 },
-            }
+            })
+            -- new server goes here:
+            -- lspconfig.SERVER.setup({
+            --    on_attach = custom_attach,
+            --    capabilities = capabilities
+            --    THEN THE COPY PASTE SETTINGS
+            --})
         end
     },
     --0=============================================================================================0
