@@ -6,7 +6,7 @@ I tried making it with as much oversight as possible for newer users to see what
 ![Screenshot](https://i.imgur.com/hb2RNzX.png)
 
 # Why?
-People were having issues with kickstart and customizing it and I wanted to try to create something that would fill that spot between complete beginner and kickstart, even more barebone, as a skeleton configuration to get people going. This is still a work in progress, thank you.
+In our discrd users some users were having trouble getting started with kickstart and customizing it and I wanted to try to create something that would fill that spot between complete beginner and kickstart, even more barebone, as a skeleton configuration to get people going. This is still a work in progress and I am open to suggestions.
 
 # Requirements:
 - [Neovim](https://github.com/neovim/neovim) stable or nightly -> check latest neovim releases.
