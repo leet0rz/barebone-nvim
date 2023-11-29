@@ -178,7 +178,7 @@ require("lazy").setup({
             -- lspconfig.SERVER.setup({
             --    on_attach = custom_attach,
             --    capabilities = capabilities
-            --    THEN THE COPY PASTE SETTINGS
+            --    COPY PASTE SERVER SETTINGS HERE
             --})
         end
     },
