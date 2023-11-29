@@ -2,7 +2,7 @@
 vim.cmd("colorscheme habamax")
 --0=========================================================================0
 vim.g.mapleader = " "
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim" -- Lazy bootstrap starts here
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -13,20 +13,20 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
-vim.opt.rtp:prepend(lazypath)
+vim.opt.rtp:prepend(lazypath)                                -- Ends here, this should be left alone.
 --0=========================================================================0
 -- █▀█ █░░ █░█ █▀▀ █ █▄░█ █▀   █▀ ▀█▀ ▄▀█ █▀█ ▀█▀   █░█ █▀▀ █▀█ █▀▀
 -- █▀▀ █▄▄ █▄█ █▄█ █ █░▀█ ▄█   ▄█ ░█░ █▀█ █▀▄ ░█░   █▀█ ██▄ █▀▄ ██▄
 --0=========================================================================0
 require("lazy").setup({
     {
-        "leet0rz/moonlight.nvim",
-        config = function()
-            vim.cmd("colorscheme moonlight")
+        "leet0rz/moonlight.nvim", -- this is the theme
+        config = function() 
+            vim.cmd("colorscheme moonlight") -- this applies the theme
         end
     },
     {
-        "windwp/nvim-autopairs",
+        "windwp/nvim-autopairs", 
         config = function()
             require("nvim-autopairs").setup()
         end
