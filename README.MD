@@ -88,8 +88,7 @@ Commenting:
 
 # Further developing your configuration
 ### Modulizing
-Try adding a lua folder where your init.lua is, then create a new file and put remaps in that file then require it from your init.lua
-
+Try adding a lua folder where your init.lua is, then create a new file and put remaps in that file then require it from your init.lua. Basically removing all the remap configuration, placing it in `[THIS IS WHERE YOUR INIT.LUA IS]/lua/remaps.lua` and then placing the command `require("remaps")` where your remaps used to be.
 ### Adding new plugins
 Example of how to add a new plugin, remember this goes inside of lazy, which starts on line 21:
 ```lua
