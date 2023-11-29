@@ -1,12 +1,12 @@
 # barebone-nvim
-barebone-nvim is meant to be the absolute bare minimum (in my opinion) of what you need to launch your own config. 
+barebone-nvim is meant to be the absolute bare minimum (in my opinion) of what you need to launch your own config. This configuration is mostly boilerplate code that you do not have to edit, you can when you get your bearings.
 
-I tried making it with as much oversight as possible for newer users to see what lets say the Oil plugin looks like and where it starts and where it ends. Hopefully this will give some more understanding in terms of adding your own later, same with settings, remaps, plugin remaps and autocmds below.
+I tried making it with as much oversight as possible for newer users to see what is what. Give it a try, open the `init.lua` file and scroll through. Hopefully this will give some more understanding in terms of adding your own later.
 
 ![Screenshot](https://i.imgur.com/hb2RNzX.png)
 
 # Why?
-In our discord some users were having troubles getting started with kickstart and customizing it and I wanted to try to create something that would fill that spot between complete beginner and kickstart, have it act like a skeleton configuration to get people going. This is still a work in progress and I am open to suggestions.
+In our discord some users were having troubles understanding kickstart and I wanted to try to create something that would fill that spot between complete beginner and kickstart, have it act like a skeleton configuration to get people going. This is still a work in progress, thank you.
 
 # Requirements:
 - [Neovim](https://github.com/neovim/neovim) stable or nightly -> check latest neovim releases.
@@ -110,8 +110,8 @@ lspconfig.YOURSERVER.setup({
    COPY PASTE SERVER SETTINGS HERE
 })
 ```
-Just make sure its within the confines lpsconfig's `config = function()` and `end`. Remember "lspconfig" is a variable, `local lspconfig = require('lspconfig')` on_attach is usually self-defined options or rules you would like to apply to that language server while capabilities is just additional capabilities from each of the servers.
+Just make sure its within the confines lpsconfig's `config = function()` and `end`. Remember "lspconfig" is a variable: `local lspconfig = require('lspconfig')`, on_attach is usually self-defined options or rules you would like to apply to that language server while capabilities is just additional capabilities from each of the servers.
 ### Adding new remaps
 
-After that try adding a remap, remember `vim.keymap.set` is in a variable as `rm` just to make it easier to create remaps.
+If you can think of a remap you would like, try adding a remap: Remember `vim.keymap.set` is in a variable as `rm` just to make it easier to create remaps. These are located at the bottom of the `init.lua` file.
 # Thanks for using barebone-nvim!
