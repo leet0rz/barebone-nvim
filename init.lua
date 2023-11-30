@@ -1,35 +1,35 @@
 -- Error theme:
-vim.cmd("colorscheme habamax")
+vim.cmd('colorscheme habamax')
 --0=========================================================================0
 -- █▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀ █▀
 -- ▄█ ██▄ ░█░ ░█░ █ █░▀█ █▄█ ▄█
 --0=========================================================================0
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 local rm = vim.keymap.set
 local vc = vim.cmd
 local vo = vim.o
 
 -- terminal tab filename title
 vim.opt.title = true
-vim.opt.titlestring = "%t"
+vim.opt.titlestring = '%t'
 
 vc('filetype plugin on')
 vc('filetype indent on')
-vc("set autoindent!")
-vc("set noswapfile")
+vc('set autoindent!')
+vc('set noswapfile')
 vo.nu = true
 
 -- indent lines
 vo.list = true
-vim.opt.listchars = { leadmultispace = "│   " }
+vim.opt.listchars = { leadmultispace = '│   ' }
 
 vo.cursorline = true
 vo.expandtab = true
 vo.lazyredraw = true
-vo.mouse = "a"
+vo.mouse = 'a'
 vo.ruler = true
 vo.showcmd = true
-vo.syntax = "enable"
+vo.syntax = 'enable'
 vo.timeoutlen = 300
 vo.wildmenu = true
 vo.wrap = false
@@ -70,17 +70,17 @@ rm('v', 'x', '"_x')
 rm('n', 'p', 'p==')
 
 -- page movement up/down
-rm('n', "<C-k>", '<S-Up>zz')
-rm('n', "<C-j>", '<S-Down>zz')
-rm('v', "<C-k>", '<S-Up>zz')
-rm('v', "<C-j>", '<S-Down>zz')
+rm('n', '<C-k>', '<S-Up>zz')
+rm('n', '<C-j>', '<S-Down>zz')
+rm('v', '<C-k>', '<S-Up>zz')
+rm('v', '<C-j>', '<S-Down>zz')
 -- Save file
-rm('n', "<C-s>", ":w<CR>")
+rm('n', '<C-s>', ':w<CR>')
 -- Move selected lines with alt arrows like in subl
-rm("v", "<A-k>", ":m '<-2<CR>gv=gv")
-rm("v", "<A-j>", ":m '>+1<CR>gv=gv")
-rm("n", "<A-k>", ":m .-2<cr>==")
-rm("n", "<A-j>", ":m .+1<cr>==")
+rm('v', '<A-k>', ":m '<-2<CR>gv=gv")
+rm('v', '<A-j>', ":m '>+1<CR>gv=gv")
+rm('n', '<A-k>', ':m .-2<cr>==')
+rm('n', '<A-j>', ':m .+1<cr>==')
 -- vertical split
 rm('n', '<leader>+', '<Cmd>vsplit<CR>')
 -- horizontal split
@@ -108,14 +108,14 @@ rm('n', '<leader>h', '<Cmd>nohlsearch<CR>')
 -- █░░ ▄▀█ ▀█ █▄█
 -- █▄▄ █▀█ █▄ ░█░
 --0=========================================================================0
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim" -- Lazy bootstrap starts here
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim' -- Lazy bootstrap starts here
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
     lazypath,
   })
 end
@@ -138,12 +138,12 @@ require("lazy").setup({
         end
     },
     {
-        "terrortylor/nvim-comment",
+        'terrortylor/nvim-comment',
         config = function()
             -- remaps
             rm('n', "'", ':CommentToggle<CR>')
             rm('v', "'", ':CommentToggle<CR>')
-            require("nvim_comment").setup()
+            require('nvim_comment').setup()
         end
 
     },
@@ -158,18 +158,18 @@ require("lazy").setup({
         config = function()
             -- remaps
             local builtin = require('telescope.builtin')
-            rm('n', '<leader>ff', builtin.find_files, {})
-            rm('n', '<leader>fg', builtin.live_grep, {})
-            rm('n', '<leader>fb', builtin.buffers, {})
-            rm('n', '<leader>fh', builtin.help_tags, {})
+            rm('n', '<leader>ff', builtin.find_files)
+            rm('n', '<leader>fg', builtin.live_grep)
+            rm('n', '<leader>fb', builtin.buffers)
+            rm('n', '<leader>fh', builtin.help_tags)
 
-            require("telescope").setup {
+            require('telescope').setup {
                 defaults = {
-                    sorting_strategy = "ascending",
-                    layout_strategy = "horizontal",
+                    sorting_strategy = 'ascending',
+                    layout_strategy = 'horizontal',
                     layout_config = {
                         horizontal = {
-                            prompt_position = "top",
+                            prompt_position = 'top',
                             preview_width = 0.5,
                             results_width = 0.5,
                             height = 0.5,
@@ -188,11 +188,11 @@ require("lazy").setup({
         'stevearc/oil.nvim',
         config = function()
             -- remaps
-            rm("n", "<leader>o", ":Oil<CR>")
-            require("oil").setup({
+            rm('n', '<leader>o', ':Oil<CR>')
+            require('oil').setup({
                 default_file_explorer = true,
                 keymaps = {
-                    ["<C-s>"] = ":w<CR>",
+                    ['<C-s>'] = ':w<CR>',
                 },
                 view_options = { show_hidden = true },
             })
@@ -206,16 +206,15 @@ require("lazy").setup({
         'nvim-treesitter/nvim-treesitter',
         config = function()
             -- ENABLES THIS IF USING WINDOWS:
-            require('nvim-treesitter.install').compilers = { "zig" }
+            require('nvim-treesitter.install').compilers = { 'zig' }
             require('nvim-treesitter.configs').setup {
-                ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
+                ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query' },
                 -- Install parsers synchronously (only applied to `ensure_installed`)
                 sync_install = false,
                 -- Automatically install missing parsers when entering buffer
                 auto_install = false,
                 highlight = {
                     enable = true,
-                    disable = { "lua" },
                 },
             }
         end
@@ -225,7 +224,7 @@ require("lazy").setup({
     -- █▄▄ █▄█ █▀█ █▄▄ █ █░▀█ ██▄
     --0=============================================================================================0
     {
-    "nvim-lualine/lualine.nvim",
+    'nvim-lualine/lualine.nvim',
     config = function()
         vim.o.showmode = false
         require('lualine').setup({
@@ -246,9 +245,9 @@ require("lazy").setup({
     -- █░▀░█ █▀█ ▄█ █▄█ █░▀█    
     --0=============================================================================================0
     {
-        "williamboman/mason.nvim",
+        'williamboman/mason.nvim',
         config = function()
-            require("mason").setup()
+            require('mason').setup()
         end
     },
     --0=============================================================================================0
@@ -262,7 +261,7 @@ require("lazy").setup({
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
             local custom_attach = function(client, bufnr)
-                print("Lsp Attached.")
+                print('Lsp Attached.')
             end
             --0=============================================================================================0
             -- █░░ █░█ ▄▀█
@@ -274,7 +273,7 @@ require("lazy").setup({
                 settings = {
                     Lua = {
                         runtime = {
-                            version = "LuaJIT",
+                            version = 'LuaJIT',
                         },
                         diagnostics = {
                             enable = true,
@@ -304,7 +303,7 @@ require("lazy").setup({
     --0=============================================================================================0
     {
         'hrsh7th/nvim-cmp',
-        event = "InsertEnter",
+        event = 'InsertEnter',
         dependencies = {
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'L3MON4D3/LuaSnip' },
@@ -334,9 +333,9 @@ require("lazy").setup({
                     ['<CR>'] = cmp.mapping.confirm({ select = true }),
                 }),
                 sources = cmp.config.sources({
-                    { name = "nvim_lsp" },
-                    { name = "luasnip" },
-                    { name = "path" },
+                    { name = 'nvim_lsp' },
+                    { name = 'luasnip' },
+                    { name = 'path' },
                 }),
             })
             -- bracket completion for lua
@@ -356,7 +355,7 @@ require("lazy").setup({
 -- █▀█ █▄█ ░█░ █▄█ █▄▄ █░▀░█ █▄▀
 --0=========================================================================0
 -- Highlight yanked text for 150ms
-vim.api.nvim_create_autocmd("TextYankPost", {
+vim.api.nvim_create_autocmd('TextYankPost', {
     callback = function()
         vim.highlight.on_yank()
     end
