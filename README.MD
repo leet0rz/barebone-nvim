@@ -62,9 +62,9 @@ choco install zig
 ### Feel free to rebind any of these to your liking
 
 ```lua
-0=============================================================================================0
+-- 0=============================================================================================0
 Remaps:
-0=============================================================================================0
+-- 0=============================================================================================0
 Ctrl + s: Save file
 Ctrl + k: Move up 1 page  center screen
 Ctrl + j: Move down 1 page and center screen
@@ -78,9 +78,9 @@ Shift + Arrow keys: Resize splits
 <: Unindent selected text
 Space + h: Remove search highlight
 
-0=============================================================================================0
+-- 0=============================================================================================0
 Plugin remaps:
-0=============================================================================================0
+-- 0=============================================================================================0
 Lazy:
 Space + l: Open Lazy
 
@@ -119,7 +119,7 @@ something else. use `/` and search for moonlight to see how its been setup in
 `init.lua`
 
 ### Adding new language servers
-[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L155-L176)
+[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L271-L292)
 would be considered lua's language server call and config.
 [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 is a list of supported language server via lspconfig's repo, look them up before
@@ -140,5 +140,5 @@ additional capabilities from each of the servers.
 
 If you can think of a remap you would like, try adding a remap: Remember
 `vim.keymap.set` is in a variable as `rm` just to make it easier to create
-remaps. These are located at the bottom of the `init.lua` file.
+remaps. These are located beneath settings at the top of the `init.lua` file.
 # Thanks for using barebone-nvim!
