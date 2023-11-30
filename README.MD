@@ -79,7 +79,7 @@ Shift + Arrow keys: Resize splits
 Space + h: Remove search highlight
 
 0=============================================================================================0
-Plugin remaps:
+Remaps for plugins:
 0=============================================================================================0
 Lazy:
 Space + l: Open Lazy
