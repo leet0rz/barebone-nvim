@@ -1,17 +1,27 @@
 # barebone-nvim
-barebone-nvim is meant to be the absolute bare minimum (in my opinion) of what you need to launch your own config. This configuration is mostly boilerplate code that you do not have to edit, you can when you get your bearings.
+barebone-nvim is meant to be the absolute bare minimum (in my opinion) of what
+you need to launch your own config. This configuration is mostly boilerplate
+code that you do not have to edit, you can when you get your bearings.
 
-I tried making it with as much oversight as possible for newer users to see what is what. Give it a try, open the `init.lua` file and scroll through. Hopefully this will give some more understanding in terms of adding your own later.
+I tried making it with as much oversight as possible for newer users to see what
+is what. Give it a try, open the `init.lua` file and scroll through. Hopefully
+this will give some more understanding in terms of adding your own later.
 
 ![Screenshot](https://i.imgur.com/hb2RNzX.png)
 
 # Why?
-In our discord some users were having troubles understanding kickstart and I wanted to try to create something that would fill that spot between complete beginner and kickstart, have it act like a skeleton configuration to get people going. This is still a work in progress, thank you.
+In our discord some users were having troubles understanding kickstart and I
+wanted to try to create something that would fill that spot between complete
+beginner and kickstart, have it act like a skeleton configuration to get people
+going. This is still a work in progress, thank you.
 
 # Requirements:
-- [Neovim](https://github.com/neovim/neovim) stable or nightly -> check latest neovim releases.
-- [Lua-language-server](https://github.com/LuaLS/lua-language-server) (Manually or via mason with `:MasonInstall`) -> The language server needs to be in PATH.
-- [Ripgrep](https://github.com/BurntSushi/ripgrep), also recommend installing [fzf](https://github.com/junegunn/fzf)
+- [Neovim](https://github.com/neovim/neovim) stable or nightly -> check latest
+  neovim releases.
+- [Lua-language-server](https://github.com/LuaLS/lua-language-server) (Manually
+  or via mason with `:MasonInstall`) -> The language server needs to be in PATH.
+- [Ripgrep](https://github.com/BurntSushi/ripgrep), also recommend installing
+  [fzf](https://github.com/junegunn/fzf)
 - A C compiler ([zig](https://ziglang.org/download/) for Windows)
 
 # Installation:
@@ -27,7 +37,8 @@ Uncomment the following line under treesitter, inside the init.lua file:
 
 ```-- require('nvim-treesitter.install').compilers = { "zig" }```
 
-Recommend using [zig](https://ziglang.org/download/) as a compiler for treesitter
+Recommend using [zig](https://ziglang.org/download/) as a compiler for
+treesitter
 
 You can also install zig via chocolatey:
 
@@ -50,7 +61,7 @@ choco install zig
 
 ### Feel free to rebind any of these to your liking
 
-```
+```lua
 0=============================================================================================0
 Remaps:
 0=============================================================================================0
@@ -88,9 +99,14 @@ Commenting:
 
 # Further developing your configuration
 ### Modulizing
-Try adding a lua folder where your init.lua is, then create a new file and put remaps in that file then require it from your init.lua. Basically removing all the remap configuration, placing it in `[THIS IS WHERE YOUR INIT.LUA IS]/lua/remaps.lua` and then placing the command `require("remaps")` where your remaps used to be.
+Try adding a lua folder where your init.lua is, then create a new file and put
+remaps in that file then require it from your init.lua. Basically removing all
+the remap configuration, placing it in `[THIS IS WHERE YOUR INIT.LUA
+IS]/lua/remaps.lua` and then placing the command `require("remaps")` where your
+remaps used to be.
 ### Adding new plugins
-Example of how to add a new plugin, remember this goes inside of lazy, which starts on line 21:
+Example of how to add a new plugin, remember this goes inside of lazy, which
+starts on line 21:
 ```lua
 require("lazy").setup({
     {
@@ -98,19 +114,31 @@ require("lazy").setup({
     },
 })
 ```
-Try adding a different colorscheme and use the vim.cmd call to change it to something else. use `/` and search for moonlight to see how its been setup in `init.lua`
+Try adding a different colorscheme and use the vim.cmd call to change it to
+something else. use `/` and search for moonlight to see how its been setup in
+`init.lua`
 
 ### Adding new language servers
-[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L155-L176) would be considered lua's language server call and config. [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md) is a list of supported language server via lspconfig's repo, look them up before trying to add a new server. Adding a new one would look something like this:
-```
+[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L155-L176)
+would be considered lua's language server call and config.
+[here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
+is a list of supported language server via lspconfig's repo, look them up before
+trying to add a new server. Adding a new one would look something like this:
+```lua
 lspconfig.YOURSERVER.setup({
    on_attach = custom_attach,
    capabilities = capabilities
    COPY PASTE SERVER SETTINGS HERE
 })
 ```
-Just make sure its within the confines lpsconfig's `config = function()` and `end`. Remember "lspconfig" is a variable: `local lspconfig = require('lspconfig')`, on_attach is usually self-defined options or rules you would like to apply to that language server while capabilities is just additional capabilities from each of the servers.
+Just make sure its within the confines lpsconfig's `config = function()` and
+`end`. Remember "lspconfig" is a variable: `local lspconfig =
+require('lspconfig')`, on_attach is usually self-defined options or rules you
+would like to apply to that language server while capabilities is just
+additional capabilities from each of the servers.
 ### Adding new remaps
 
-If you can think of a remap you would like, try adding a remap: Remember `vim.keymap.set` is in a variable as `rm` just to make it easier to create remaps. These are located at the bottom of the `init.lua` file.
+If you can think of a remap you would like, try adding a remap: Remember
+`vim.keymap.set` is in a variable as `rm` just to make it easier to create
+remaps. These are located at the bottom of the `init.lua` file.
 # Thanks for using barebone-nvim!
