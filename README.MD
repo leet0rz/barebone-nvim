@@ -119,7 +119,7 @@ something else. use `/` and search for moonlight to see how its been setup in
 `init.lua`
 
 ### Adding new language servers
-[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L271-L292)
+[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L270-L291)
 would be considered lua's language server call and config.
 [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 is a list of supported language server via lspconfig's repo, look them up before
