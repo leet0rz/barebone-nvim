@@ -41,7 +41,6 @@ Recommend using [zig](https://ziglang.org/download/) as a compiler for
 treesitter
 
 You can also install zig via chocolatey:
-
 ```
 choco install zig
 ```

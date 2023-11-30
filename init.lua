@@ -162,7 +162,7 @@ require("lazy").setup({
             rm('n', '<leader>fg', builtin.live_grep)
             rm('n', '<leader>fb', builtin.buffers)
             rm('n', '<leader>fh', builtin.help_tags)
-
+            -- telescope's setup
             require('telescope').setup {
                 defaults = {
                     sorting_strategy = 'ascending',
