@@ -311,9 +311,9 @@ require("lazy").setup({
             'hrsh7th/cmp-path',
         },
         config = function()
-            local cmp = require 'cmp'
+            local cmp = require('cmp')
             local cmp_ap = require('nvim-autopairs.completion.cmp')
-            local luasnip = require 'luasnip'
+            local luasnip = require('luasnip')
             luasnip.config.setup {}
             cmp.setup({
                 snippet = {
