@@ -105,7 +105,7 @@ IS]/lua/remaps.lua` and then placing the command `require("remaps")` where your
 remaps used to be.
 ### Adding new plugins
 Example of how to add a new plugin, remember this goes inside of lazy, which
-starts on line 21:
+starts on line 127:
 ```lua
 require("lazy").setup({
     {

@@ -4,8 +4,8 @@ vim.cmd('colorscheme habamax')
 -- █▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀ █▀
 -- ▄█ ██▄ ░█░ ░█░ █ █░▀█ █▄█ ▄█
 --0=========================================================================0
-vim.g.mapleader = ' '
-local rm = vim.keymap.set
+vim.g.mapleader = ' '           -- setting the leader key
+local rm = vim.keymap.set       -- just some variables to make the typing a bit less
 local vc = vim.cmd
 local vo = vim.o
 
