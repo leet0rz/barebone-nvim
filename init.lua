@@ -21,7 +21,7 @@ vo.nu = true
 
 -- indent lines
 vo.list = true
-vim.opt.listchars = { tab = "    ", leadmultispace = '│   ' }
+vim.opt.listchars = { tab = "   ", leadmultispace = '│   ' }
 
 vo.cursorline = true
 vo.expandtab = true
