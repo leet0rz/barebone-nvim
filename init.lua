@@ -203,7 +203,8 @@ require("lazy").setup({
     -- ░█░ █▀▄ ██▄ ██▄ ▄█ █▀█ █ ░█░ ░█░ ██▄ █▀▄
     --0=============================================================================================0
     {
-        'nvim-treesitter/nvim-treesitter',
+        'nvim-treesitter/nvim-treesitter', 
+        build = ":TSUpdate",
         config = function()
             -- ENABLES THIS IF USING WINDOWS:
             -- require('nvim-treesitter.install').compilers = { 'zig' }
