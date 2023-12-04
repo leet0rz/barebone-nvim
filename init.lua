@@ -126,7 +126,7 @@ vim.opt.rtp:prepend(lazypath)                                -- Ends here, this 
 --0=========================================================================0
 require("lazy").setup({
     {
-        "leet0rz/moonlight.nvim", -- this is the theme
+        "leet0rz/modified-moonlight.nvim", -- this is the theme
         config = function()
             vim.cmd("colorscheme moonlight") -- this applies the theme
         end
