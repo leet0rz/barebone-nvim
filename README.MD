@@ -7,7 +7,7 @@ I tried making it with as much oversight as possible for newer users to see what
 is what. Give it a try, open the `init.lua` file and scroll through. Hopefully
 this will give some more understanding in terms of adding your own later.
 
-![Screenshot](https://i.imgur.com/hb2RNzX.png)
+![Screenshot](https://i.imgur.com/59FiTnP.png)
 
 # Why?
 In our discord some users were having troubles understanding kickstart and I
