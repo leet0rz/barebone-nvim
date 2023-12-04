@@ -6,54 +6,52 @@ vim.cmd('colorscheme habamax')
 --0=========================================================================0
 vim.g.mapleader = ' '           -- setting the leader key
 local rm = vim.keymap.set       -- just some variables to make the typing a bit less
-local vc = vim.cmd
-local vo = vim.o
+-- local vim.o = vim.o
 
 -- terminal tab filename title
 vim.opt.title = true
 vim.opt.titlestring = '%t'
 
-vc('filetype plugin on')
-vc('filetype indent on')
-vc('set autoindent!')
-vc('set noswapfile')
-vo.nu = true
+vim.opt.autoindent = true
+vim.opt.swapfile = false
+vim.o.number = true
 
 -- indent lines
-vo.list = true
+vim.o.list = true
 vim.opt.listchars = { tab = "   ", leadmultispace = '│   ' }
 
-vo.cursorline = true
-vo.expandtab = true
-vo.lazyredraw = true
-vo.mouse = 'a'
-vo.ruler = true
-vo.showcmd = true
-vo.syntax = 'enable'
-vo.timeoutlen = 300
-vo.wildmenu = true
-vo.wrap = false
-vo.completeopt = 'menuone,preview,noselect'
+vim.o.cursorline = true
+vim.o.expandtab = true
+vim.o.lazyredraw = true
+vim.o.mouse = 'a'
+vim.o.ruler = true
+vim.o.showcmd = true
+vim.o.syntax = 'enable'
+vim.o.timeoutlen = 300
+vim.o.wildmenu = true
+vim.o.wrap = false
+vim.o.completeopt = 'menuone,preview,noselect'
 
 -- Faster update time
-vo.updatetime = 50
+vim.o.updatetime = 50
 
 -- format
-vo.shiftwidth = 4
-vo.softtabstop = 4
-vo.smarttab = true
-vo.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.softtabstop = 4
+vim.o.smarttab = true
+vim.o.tabstop = 4
 
 vim.opt.termguicolors = true
-vo.clipboard = 'unnamedplus'
-vo.encoding = 'utf-8'
-vo.hlsearch = true
-vo.ignorecase = true
-vo.incsearch = true
-vo.showmatch = true
-vo.smartcase = true
-vo.smartindent = true
-vo.scrolloff = 5
+vim.o.clipboard = 'unnamedplus'
+vim.o.encoding = 'utf-8'
+vim.o.hlsearch = true
+vim.o.ignorecase = true
+vim.o.incsearch = true
+vim.o.showmatch = true
+vim.o.smartcase = true
+vim.o.smartindent = true
+vim.o.scrolloff = 5
+vim.o.signcolumn = 'yes'
 
 --0=========================================================================0
 -- █▀█ █▀▀ █▀▄▀█ ▄▀█ █▀█ █▀
@@ -63,7 +61,7 @@ vo.scrolloff = 5
 -- Search centering
 rm('n', 'n', 'nzz')
 rm('n', 'N', 'Nzz')
--- Deleting letters going to void
+-- Deleting letters going to vim.oid
 rm('n', 'x', '"_x')
 rm('v', 'x', '"_x')
 -- format pasted line.
