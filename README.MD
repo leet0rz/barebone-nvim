@@ -106,7 +106,7 @@ IS]/lua/remaps.lua` and then placing the command `require("remaps")` where your
 remaps used to be.
 ### Adding new plugins
 Example of how to add a new plugin, remember this goes inside of lazy, which
-starts on line 127:
+starts on line 124:
 ```lua
 require("lazy").setup({
     {
@@ -119,7 +119,7 @@ something else. use `/` and search for moonlight to see how its been setup in
 `init.lua`
 
 ### Adding new language servers
-[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L270-L291)
+[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L268-L289)
 would be considered lua's language server call and config.
 [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 is a list of supported language server via lspconfig's repo, look them up before
