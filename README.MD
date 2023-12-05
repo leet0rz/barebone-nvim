@@ -105,8 +105,9 @@ the remap configuration, placing it in `[THIS IS WHERE YOUR INIT.LUA
 IS]/lua/remaps.lua` and then placing the command `require("remaps")` where your
 remaps used to be.
 ### Adding new plugins
-Example of how to add a new plugin, remember this goes inside of lazy, which
-starts on line 130:
+[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L131-L136) is
+a plugin and here is an example of how to add a new plugin, remember this goes
+inside of lazy, which starts on line 130:
 ```lua
 require("lazy").setup({
     {
