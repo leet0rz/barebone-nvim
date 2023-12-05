@@ -4,53 +4,59 @@ vim.cmd('colorscheme habamax')
 -- █▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀ █▀
 -- ▄█ ██▄ ░█░ ░█░ █ █░▀█ █▄█ ▄█
 --0=========================================================================0
-vim.g.mapleader = ' '           -- setting the leader key
-local rm = vim.keymap.set       -- just some variables to make the typing a bit less
 
--- terminal tab filename title
+-- Global Settings
+vim.g.mapleader = ' '  -- Setting the leader key
+
+-- Keymap Variables
+local rm = vim.keymap.set
+
+-- Terminal and Title Settings
 vim.opt.title = true
 vim.opt.titlestring = '%t'
 
+-- Indentation and Formatting Settings
 vim.opt.autoindent = true
-vim.opt.swapfile = false
-vim.o.number = true
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.smarttab = true
+vim.opt.tabstop = 4
 
--- indent lines
-vim.o.list = true
+-- Display Settings
+vim.opt.cursorline = true
+vim.opt.expandtab = true
+vim.opt.lazyredraw = true
+vim.opt.mouse = 'a'
+vim.opt.ruler = true
+vim.opt.showcmd = true
+vim.opt.syntax = 'enable'
+vim.opt.timeoutlen = 300
+vim.opt.wildmenu = true
+vim.opt.wrap = false
+vim.opt.completeopt = 'menuone,preview,noselect'
+vim.opt.updatetime = 50
+vim.opt.scrolloff = 5
+vim.opt.signcolumn = 'yes'
+
+-- List and Match Settings
+vim.opt.list = true
 vim.opt.listchars = { tab = "   ", leadmultispace = '│   ' }
+vim.opt.showmatch = true
 
-vim.o.cursorline = true
-vim.o.expandtab = true
-vim.o.lazyredraw = true
-vim.o.mouse = 'a'
-vim.o.ruler = true
-vim.o.showcmd = true
-vim.o.syntax = 'enable'
-vim.o.timeoutlen = 300
-vim.o.wildmenu = true
-vim.o.wrap = false
-vim.o.completeopt = 'menuone,preview,noselect'
-
--- Faster update time
-vim.o.updatetime = 50
-
--- format
-vim.o.shiftwidth = 4
-vim.o.softtabstop = 4
-vim.o.smarttab = true
-vim.o.tabstop = 4
-
+-- GUI and Encoding Settings
 vim.opt.termguicolors = true
-vim.o.clipboard = 'unnamedplus'
-vim.o.encoding = 'utf-8'
-vim.o.hlsearch = true
-vim.o.ignorecase = true
-vim.o.incsearch = true
-vim.o.showmatch = true
-vim.o.smartcase = true
-vim.o.smartindent = true
-vim.o.scrolloff = 5
-vim.o.signcolumn = 'yes'
+vim.opt.clipboard = 'unnamedplus'
+vim.opt.encoding = 'utf-8'
+
+-- Search and Case Settings
+vim.opt.hlsearch = true
+vim.opt.ignorecase = true
+vim.opt.incsearch = true
+vim.opt.smartcase = true
+vim.opt.smartindent = true
+
+-- Line Number Settings
+vim.opt.number = true
 
 --0=========================================================================0
 -- █▀█ █▀▀ █▀▄▀█ ▄▀█ █▀█ █▀
