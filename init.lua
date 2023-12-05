@@ -6,7 +6,6 @@ vim.cmd('colorscheme habamax')
 --0=========================================================================0
 vim.g.mapleader = ' '           -- setting the leader key
 local rm = vim.keymap.set       -- just some variables to make the typing a bit less
--- local vim.o = vim.o
 
 -- terminal tab filename title
 vim.opt.title = true
