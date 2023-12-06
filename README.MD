@@ -103,11 +103,12 @@ Try adding a lua folder where your init.lua is, then create a new file and put
 remaps in that file then require it from your init.lua. Basically removing all
 the remap configuration, placing it in `[THIS IS WHERE YOUR INIT.LUA
 IS]/lua/remaps.lua` and then placing the command `require("remaps")` where your
-remaps used to be.
+remaps used to be. 
+
 ### Adding new plugins
-[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L131-L136) is
+[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L127-L132) is
 a plugin and here is an example of how to add a new plugin, remember this goes
-inside of lazy, which starts on line 130:
+inside of lazy, which starts on line 126:
 ```lua
 require("lazy").setup({
     {
@@ -120,7 +121,7 @@ something else. use `/` and search for moonlight to see how its been setup in
 `init.lua`
 
 ### Adding new language servers
-[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L274-L295)
+[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L270-L291)
 would be considered lua's language server call and config.
 [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 is a list of supported language server via lspconfig's repo, look them up before
@@ -137,8 +138,8 @@ Just make sure its within the confines lpsconfig's `config = function()` and
 require('lspconfig')`, on_attach is usually self-defined options or rules you
 would like to apply to that language server while capabilities is just
 additional capabilities from each of the servers.
-### Adding new remaps
 
+### Adding new remaps
 If you can think of a remap you would like, try adding a remap: Remember
 `vim.keymap.set` is in a variable as `rm` just to make it easier to create
 remaps. These are located beneath settings at the top of the `init.lua` file.

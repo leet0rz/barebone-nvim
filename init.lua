@@ -25,22 +25,19 @@ vim.opt.tabstop = 4
 -- Display Settings
 vim.opt.cursorline = true
 vim.opt.expandtab = true
-vim.opt.lazyredraw = true
 vim.opt.mouse = 'a'
-vim.opt.ruler = true
 vim.opt.showcmd = true
-vim.opt.syntax = 'enable'
 vim.opt.timeoutlen = 300
 vim.opt.wildmenu = true
 vim.opt.wrap = false
-vim.opt.completeopt = 'menuone,preview,noselect'
+vim.opt.completeopt = 'menu,menuone,noselect'
 vim.opt.updatetime = 50
 vim.opt.scrolloff = 5
 vim.opt.signcolumn = 'yes'
 
 -- List and Match Settings
 vim.opt.list = true
-vim.opt.listchars = { tab = "   ", leadmultispace = '│   ' }
+vim.opt.listchars = { tab = "  ", leadmultispace = '│   ' }
 vim.opt.showmatch = true
 
 -- GUI and Encoding Settings
@@ -57,7 +54,6 @@ vim.opt.smartindent = true
 
 -- Line Number Settings
 vim.opt.number = true
-
 --0=========================================================================0
 -- █▀█ █▀▀ █▀▄▀█ ▄▀█ █▀█ █▀
 -- █▀▄ ██▄ █░▀░█ █▀█ █▀▀ ▄█
@@ -129,13 +125,13 @@ vim.opt.rtp:prepend(lazypath)                                -- Ends here, this 
 --0=========================================================================0
 require("lazy").setup({
     {
-        "leet0rz/modified-moonlight.nvim", -- this is the theme
+        'leet0rz/modified-moonlight.nvim', -- this is the theme
         config = function()
-            vim.cmd("colorscheme moonlight") -- this applies the theme
+            vim.cmd('colorscheme moonlight') -- this applies the theme
         end
     },
     {
-        "windwp/nvim-autopairs",
+        'windwp/nvim-autopairs',
         config = function()
             require("nvim-autopairs").setup()
         end
