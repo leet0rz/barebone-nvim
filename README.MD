@@ -19,8 +19,9 @@ going. This is still a work in progress, thank you.
 - [Neovim](https://github.com/neovim/neovim) stable or nightly -> check latest
   neovim releases.
 - [Lua-language-server](https://github.com/LuaLS/lua-language-server) (Recommend
-  manual installation, otherwise use mason with `:MasonInstall
-  lua-language-server`) -> The language server needs to be in PATH.
+  [manual installation](https://luals.github.io/#neovim-install), otherwise use
+  mason with `:MasonInstall lua-language-server`) -> The language server needs
+  to be in PATH.
 - [Ripgrep](https://github.com/BurntSushi/ripgrep), also recommend installing
   [fzf](https://github.com/junegunn/fzf)
 - A C compiler ([zig](https://ziglang.org/download/) for Windows)
