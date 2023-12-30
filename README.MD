@@ -1,7 +1,9 @@
 # barebone-nvim
 barebone-nvim is meant to be the absolute bare minimum (in my opinion) of what
 you need to launch your own config. This configuration is mostly boilerplate
-code that you do not have to edit, you can when you get your bearings.
+code that you do not have to edit, you can when you get your bearings. Can also
+be used as a reference point if you wonder about any parts of the neovim config
+while getting started.
 
 I tried making it with as much oversight as possible for newer users to see what
 is what. Give it a try, open the `init.lua` file and scroll through. Hopefully
@@ -120,7 +122,7 @@ something else. use `/` and search for moonlight to see how its been setup in
 `init.lua`
 
 ### Adding new language servers
-[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L270-L291)
+[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L259-L280)
 would be considered lua's language server call and config.
 [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 is a list of supported language server via lspconfig's repo, look them up before
