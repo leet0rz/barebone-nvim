@@ -104,7 +104,7 @@ rm('v', '<', '<gv')
 -- Remove search HL
 rm('n', '<leader>nh', '<Cmd>nohlsearch<CR>')
 -- New buffer
-rm('n', '<leader-t>', ':enew<CR>')
+rm('n', '<leader>t', ':enew<CR>')
 -- Next buffer
 rm('n', '<Tab>', '<Cmd>bnext<CR>')
 -- Previous buffer
