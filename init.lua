@@ -102,7 +102,7 @@ rm('n', '<S-Down>', '<Cmd>resize +2<CR>')
 rm('v', '>', '>gv')
 rm('v', '<', '<gv')
 -- Remove search HL
-rm('n', '<leader>h', '<Cmd>nohlsearch<CR>')
+rm('n', '<leader>nh', '<Cmd>nohlsearch<CR>')
 -- New buffer
 rm('n', '<leader-t>', ':enew<CR>')
 -- Next buffer

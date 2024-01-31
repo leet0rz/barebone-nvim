@@ -78,7 +78,7 @@ Space + h/j/k/l: Movement in the splits
 Shift + Arrow keys: Resize splits
 >: Indent selected text
 <: Unindent selected text
-Space + h: Remove search highlight
+Space + nh: Remove search highlight
 Space + t: New buffer 
 Tab: Next Buffer
 Shift + Tab: Previous buffer
