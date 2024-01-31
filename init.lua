@@ -65,10 +65,10 @@ rm('n', 'N', 'Nzz')
 -- Deleting letters going to vim.oid
 rm('n', 'x', '"_x')
 rm('v', 'x', '"_x')
--- format pasted line.
+-- Format pasted line.
 rm('n', 'p', 'p==')
 
--- page movement up/down
+-- Page movement up/down
 rm('n', '<C-k>', '<S-Up>zz')
 rm('n', '<C-j>', '<S-Down>zz')
 rm('v', '<C-k>', '<S-Up>zz')
@@ -80,9 +80,9 @@ rm('v', '<A-k>', ":m '<-2<CR>gv=gv")
 rm('v', '<A-j>', ":m '>+1<CR>gv=gv")
 rm('n', '<A-k>', ':m .-2<cr>==')
 rm('n', '<A-j>', ':m .+1<cr>==')
--- vertical split
+-- Vertical split
 rm('n', '<leader>+', '<Cmd>vsplit<CR>')
--- horizontal split
+-- Horizontal split
 rm('n', '<leader>-', '<Cmd>split<CR>')
 -- Move in splits with hjkl
 rm('n', '<leader>h', '<Cmd>wincmd h<CR>')
@@ -103,6 +103,14 @@ rm('v', '>', '>gv')
 rm('v', '<', '<gv')
 -- Remove search HL
 rm('n', '<leader>h', '<Cmd>nohlsearch<CR>')
+-- New buffer
+rm('n', '<leader-t>', ':enew<CR>')
+-- Next buffer
+rm('n', '<Tab>', '<Cmd>bnext<CR>')
+-- Previous buffer
+rm('n', '<S-Tab>', '<Cmd>bprevious<CR>')
+-- Quit current buffer
+rm('n', '<leader>q', '<Cmd>bd<CR>')
 --0=========================================================================0
 -- █░░ ▄▀█ ▀█ █▄█
 -- █▄▄ █▀█ █▄ ░█░
@@ -171,7 +179,7 @@ require("lazy").setup({
                             prompt_position = 'top',
                             preview_width = 0.5,
                             results_width = 0.5,
-                            height = 0.5,
+                            height = 0.8,
                             preview_cutoff = 120,
                         }
                     },
@@ -198,11 +206,22 @@ require("lazy").setup({
         end
     },
     --0=============================================================================================0
+    -- █▄▄ █░█ █▀▀ █▀▀ █▀▀ █▀█ █░░ █ █▄░█ █▀▀
+    -- █▄█ █▄█ █▀░ █▀░ ██▄ █▀▄ █▄▄ █ █░▀█ ██▄    
+    --0=============================================================================================0
+    {
+        "akinsho/bufferline.nvim",
+        version = "*",
+        config = function()
+            require("bufferline").setup()
+        end
+    },
+    --0=============================================================================================0
     -- ▀█▀ █▀█ █▀▀ █▀▀ █▀ █░█ █ ▀█▀ ▀█▀ █▀▀ █▀█
     -- ░█░ █▀▄ ██▄ ██▄ ▄█ █▀█ █ ░█░ ░█░ ██▄ █▀▄
     --0=============================================================================================0
     {
-        'nvim-treesitter/nvim-treesitter', 
+        'nvim-treesitter/nvim-treesitter',
         build = ":TSUpdate",
         config = function()
             -- ENABLES THIS IF USING WINDOWS:
@@ -253,8 +272,8 @@ require("lazy").setup({
                 print('Lsp Attached.')
             end
             --0=============================================================================================0
-            -- █░░ █░█ ▄▀█
-            -- █▄▄ █▄█ █▀█
+            -- █░░ █░█ ▄▀█ ▄▄ █░░ ▄▀█ █▄░█ █▀▀ █░█ ▄▀█ █▀▀ █▀▀ ▄▄ █▀ █▀▀ █▀█ █░█ █▀▀ █▀█
+            -- █▄▄ █▄█ █▀█ ░░ █▄▄ █▀█ █░▀█ █▄█ █▄█ █▀█ █▄█ ██▄ ░░ ▄█ ██▄ █▀▄ ▀▄▀ ██▄ █▀▄
             --0=============================================================================================0
             lspconfig.lua_ls.setup ({
                 on_attach = custom_attach,
@@ -336,7 +355,6 @@ require("lazy").setup({
     },
 },
 {
-    rm('n', '<leader>l', ':Lazy<CR>'),
     ui = {
         border = "rounded"
     }

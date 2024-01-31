@@ -21,8 +21,8 @@ going. This is still a work in progress, thank you.
 - [Neovim](https://github.com/neovim/neovim) stable or nightly -> check latest
   neovim releases.
 - [Lua-language-server](https://github.com/LuaLS/lua-language-server) (Recommend
-  [manual installation](https://luals.github.io/#neovim-install) -> The language
-  server needs to be in PATH.
+  [manual installation](https://luals.github.io/#neovim-install)) -> The
+  language server needs to be in PATH.
 - [Ripgrep](https://github.com/BurntSushi/ripgrep), also recommend installing
   [fzf](https://github.com/junegunn/fzf)
 - A C compiler ([zig](https://ziglang.org/download/) for Windows)
@@ -54,6 +54,7 @@ choco install zig
 - nvim-comment
 - telescope.nvim
 - oil.nvim
+- bufferline.nvim
 - nvim-treesitter
 - lualine.nvim
 - nvim-lspconfig and friends
@@ -78,12 +79,13 @@ Shift + Arrow keys: Resize splits
 >: Indent selected text
 <: Unindent selected text
 Space + h: Remove search highlight
-
+Space + t: New buffer 
+Tab: Next Buffer
+Shift + Tab: Previous buffer
+Space + q: Quit buffer
 0=============================================================================================0
 Remaps for plugins:
 0=============================================================================================0
-Lazy:
-Space + l: Open Lazy
 
 Telescope:
 Space + ff: find files
@@ -107,9 +109,9 @@ IS]/lua/remaps.lua` and then placing the command `require("remaps")` where your
 remaps used to be. 
 
 ### Adding new plugins
-[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L127-L132) is
+[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L135-L140) is
 a plugin and here is an example of how to add a new plugin, remember this goes
-inside of lazy, which starts on line 126:
+inside of lazy, which starts on line 134:
 ```lua
 require("lazy").setup({
     {
@@ -122,7 +124,7 @@ something else. use `/` and search for moonlight to see how its been setup in
 `init.lua`
 
 ### Adding new language servers
-[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L259-L280)
+[This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L278-L299)
 would be considered lua's language server call and config.
 [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 is a list of supported language server via lspconfig's repo, look them up before
