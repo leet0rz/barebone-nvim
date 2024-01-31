@@ -9,10 +9,10 @@ I tried making it with as much oversight as possible for newer users to see what
 is what. Give it a try, open the `init.lua` file and scroll through. Hopefully
 this will give some more understanding in terms of adding your own later.
 
-![Screenshot](https://i.imgur.com/T4KWsMC.png)
-![Screenshot](https://i.imgur.com/UC7u8xg.png)
-![Screenshot](https://i.imgur.com/wXql4oo.png)
-![Screenshot](https://i.imgur.com/9TLMlFi.png)
+![Screenshot](https://i.imgur.com/Rencrzd.png)
+![Screenshot](https://i.imgur.com/FFwbTaJ.png)
+![Screenshot](https://i.imgur.com/oe7fB4n.png)
+![Screenshot](https://i.imgur.com/0Bhvnp2.png)
 
 # Why?
 In our discord some users were having troubles understanding kickstart and I
