@@ -37,7 +37,7 @@ vim.opt.signcolumn = 'yes'
 
 -- List and Match Settings
 vim.opt.list = true
-vim.opt.listchars = { tab = "  ", leadmultispace = '│   ' }
+vim.opt.listchars = { tab = '  ', leadmultispace = '│   ' }
 vim.opt.showmatch = true
 
 -- GUI and Encoding Settings
@@ -62,10 +62,10 @@ vim.opt.number = true
 -- Search centering
 rm('n', 'n', 'nzz')
 rm('n', 'N', 'Nzz')
--- Deleting letters going to vim.oid
+-- Deleting to the void
 rm('n', 'x', '"_x')
 rm('v', 'x', '"_x')
--- Format pasted line.
+-- Format pasted line
 rm('n', 'p', 'p==')
 
 -- Page movement up/down
