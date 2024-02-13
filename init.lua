@@ -9,7 +9,7 @@ vim.cmd('colorscheme habamax')
 vim.g.mapleader = ' '  -- Setting the leader key
 
 -- Keymap Variables
-local rm = vim.keymap.set
+local remap = vim.keymap.set
 
 -- Terminal and Title Settings
 vim.opt.title = true
@@ -60,57 +60,57 @@ vim.opt.number = true
 --0=========================================================================0
 -- QOL:
 -- Search centering
-rm('n', 'n', 'nzz')
-rm('n', 'N', 'Nzz')
+remap('n', 'n', 'nzz')
+remap('n', 'N', 'Nzz')
 -- Deleting to the void
-rm('n', 'x', '"_x')
-rm('v', 'x', '"_x')
+remap('n', 'x', '"_x')
+remap('v', 'x', '"_x')
 -- Format pasted line
-rm('n', 'p', 'p==')
+remap('n', 'p', 'p==')
 
 -- Page movement up/down
-rm('n', '<C-k>', '<S-Up>zz')
-rm('n', '<C-j>', '<S-Down>zz')
-rm('v', '<C-k>', '<S-Up>zz')
-rm('v', '<C-j>', '<S-Down>zz')
+remap('n', '<C-k>', '<S-Up>zz')
+remap('n', '<C-j>', '<S-Down>zz')
+remap('v', '<C-k>', '<S-Up>zz')
+remap('v', '<C-j>', '<S-Down>zz')
 -- Save file
-rm('n', '<C-s>', ':w<CR>')
+remap('n', '<C-s>', ':w<CR>')
 -- Move selected lines with alt arrows like in subl
-rm('v', '<A-k>', ":m '<-2<CR>gv=gv")
-rm('v', '<A-j>', ":m '>+1<CR>gv=gv")
-rm('n', '<A-k>', ':m .-2<cr>==')
-rm('n', '<A-j>', ':m .+1<cr>==')
+remap('v', '<A-k>', ":m '<-2<CR>gv=gv")
+remap('v', '<A-j>', ":m '>+1<CR>gv=gv")
+remap('n', '<A-k>', ':m .-2<cr>==')
+remap('n', '<A-j>', ':m .+1<cr>==')
 -- Vertical split
-rm('n', '<leader>+', '<Cmd>vsplit<CR>')
+remap('n', '<leader>+', '<Cmd>vsplit<CR>')
 -- Horizontal split
-rm('n', '<leader>-', '<Cmd>split<CR>')
+remap('n', '<leader>-', '<Cmd>split<CR>')
 -- Move in splits with hjkl
-rm('n', '<leader>h', '<Cmd>wincmd h<CR>')
-rm('n', '<leader>j', '<Cmd>wincmd j<CR>')
-rm('n', '<leader>k', '<Cmd>wincmd k<CR>')
-rm('n', '<leader>l', '<Cmd>wincmd l<CR>')
-rm('t', '<leader>h', '<Cmd>wincmd h<CR>')
-rm('t', '<leader>j', '<Cmd>wincmd j<CR>')
-rm('t', '<leader>k', '<Cmd>wincmd k<CR>')
-rm('t', '<leader>l', '<Cmd>wincmd l<CR>')
+remap('n', '<leader>h', '<Cmd>wincmd h<CR>')
+remap('n', '<leader>j', '<Cmd>wincmd j<CR>')
+remap('n', '<leader>k', '<Cmd>wincmd k<CR>')
+remap('n', '<leader>l', '<Cmd>wincmd l<CR>')
+remap('t', '<leader>h', '<Cmd>wincmd h<CR>')
+remap('t', '<leader>j', '<Cmd>wincmd j<CR>')
+remap('t', '<leader>k', '<Cmd>wincmd k<CR>')
+remap('t', '<leader>l', '<Cmd>wincmd l<CR>')
 -- Resize splits
-rm('n', '<S-Left>', '<Cmd>vertical resize -2<CR>')
-rm('n', '<S-Right>', '<Cmd>vertical resize +2<CR>')
-rm('n', '<S-Up>', '<Cmd>resize -2<CR>')
-rm('n', '<S-Down>', '<Cmd>resize +2<CR>')
+remap('n', '<S-Left>', '<Cmd>vertical resize -2<CR>')
+remap('n', '<S-Right>', '<Cmd>vertical resize +2<CR>')
+remap('n', '<S-Up>', '<Cmd>resize -2<CR>')
+remap('n', '<S-Down>', '<Cmd>resize +2<CR>')
 -- Indent/Unindent selected text with Tab and Shift+Tab
-rm('v', '>', '>gv')
-rm('v', '<', '<gv')
+remap('v', '>', '>gv')
+remap('v', '<', '<gv')
 -- Remove search HL
-rm('n', '<leader>nh', '<Cmd>nohlsearch<CR>')
+remap('n', '<leader>nh', '<Cmd>nohlsearch<CR>')
 -- New buffer
-rm('n', '<leader>t', ':enew<CR>')
+remap('n', '<leader>t', ':enew<CR>')
 -- Next buffer
-rm('n', '<Tab>', '<Cmd>bnext<CR>')
+remap('n', '<Tab>', '<Cmd>bnext<CR>')
 -- Previous buffer
-rm('n', '<S-Tab>', '<Cmd>bprevious<CR>')
+remap('n', '<S-Tab>', '<Cmd>bprevious<CR>')
 -- Quit current buffer
-rm('n', '<leader>q', '<Cmd>bd<CR>')
+remap('n', '<leader>q', '<Cmd>bd<CR>')
 --0=========================================================================0
 -- █░░ ▄▀█ ▀█ █▄█
 -- █▄▄ █▀█ █▄ ░█░
@@ -148,8 +148,8 @@ require("lazy").setup({
         'terrortylor/nvim-comment',
         config = function()
             -- remaps
-            rm('n', "'", ':CommentToggle<CR>')
-            rm('v', "'", ':CommentToggle<CR>')
+            remap('n', "'", ':CommentToggle<CR>')
+            remap('v', "'", ':CommentToggle<CR>')
             require('nvim_comment').setup()
         end
 
@@ -160,15 +160,15 @@ require("lazy").setup({
     --0=============================================================================================0
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.4',
+        tag = '0.1.5',
         dependencies = { 'nvim-lua/plenary.nvim' },
         config = function()
             -- remaps
             local builtin = require('telescope.builtin')
-            rm('n', '<leader>ff', builtin.find_files)
-            rm('n', '<leader>fg', builtin.live_grep)
-            rm('n', '<leader>fb', builtin.buffers)
-            rm('n', '<leader>fh', builtin.help_tags)
+            remap('n', '<leader>ff', builtin.find_files)
+            remap('n', '<leader>fg', builtin.live_grep)
+            remap('n', '<leader>fb', builtin.buffers)
+            remap('n', '<leader>fh', builtin.help_tags)
             -- telescope's setup
             require('telescope').setup {
                 defaults = {
@@ -195,7 +195,7 @@ require("lazy").setup({
         'stevearc/oil.nvim',
         config = function()
             -- remaps
-            rm('n', '<leader>o', ':Oil<CR>')
+            remap('n', '<leader>o', ':Oil<CR>')
             require('oil').setup({
                 default_file_explorer = true,
                 keymaps = {

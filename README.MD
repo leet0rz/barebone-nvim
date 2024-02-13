@@ -91,16 +91,16 @@ Remaps for plugins:
 0=============================================================================================0
 
 Telescope:
-Space + ff: find files
-Space + fg: live grep
+Space + ff: Find files
+Space + fg: Live grep
 
 Oil:
-Space + o: run Oil
-Enter: open file/folder
+Space + o: Run Oil
+Enter: Open file/folder
 -: Go to parent folder
 
 Commenting:
-' - comment one or more lines
+': Comment/Uncomment one or more lines
 ```
 
 # Further developing your configuration
@@ -147,6 +147,6 @@ additional capabilities from each of the servers.
 
 ### Adding new remaps
 If you can think of a remap you would like, try adding a remap: Remember
-`vim.keymap.set` is in a variable as `rm` just to make it easier to create
+`vim.keymap.set` is in a variable as `remap` just to make it easier to create
 remaps. These are located beneath settings at the top of the `init.lua` file.
 # Thanks for using barebone-nvim!
