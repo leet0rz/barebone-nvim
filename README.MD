@@ -54,13 +54,12 @@ choco install zig
 # Plugins:
 - modified moonlight.nvim
 - nvim-autopairs
-- nvim-comment
 - telescope.nvim
 - oil.nvim
 - bufferline.nvim
 - nvim-treesitter
 - lualine.nvim
-- nvim-lspconfig and friends
+- nvim-lspconfig and blink
 
 # Hotkeys:
 
@@ -129,7 +128,7 @@ something else. use `/` and search for moonlight to see how its been setup in
 ### Adding new language servers
 [This](https://github.com/leet0rz/barebone-nvim/blob/main/init.lua#L278-L299)
 would be considered lua's language server call and config.
-[here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
+[here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md)
 is a list of supported language server via lspconfig's repo, look them up before
 trying to add a new server. Adding a new one would look something like this:
 ```lua
