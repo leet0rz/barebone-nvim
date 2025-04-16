@@ -4,7 +4,6 @@ vim.cmd('colorscheme habamax')
 -- █▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀ █▀
 -- ▄█ ██▄ ░█░ ░█░ █ █░▀█ █▄█ ▄█
 --0=========================================================================0
-
 -- Global Settings
 vim.g.mapleader = ' '  -- Setting the leader key
 
@@ -30,20 +29,22 @@ vim.opt.showcmd = true
 vim.opt.timeoutlen = 300
 vim.opt.wildmenu = true
 vim.opt.wrap = false
-vim.opt.completeopt = 'menu,menuone,noselect'
+vim.opt.completeopt = "menuone,noselect"
 vim.opt.updatetime = 50
 vim.opt.scrolloff = 5
 vim.opt.signcolumn = 'yes'
 
 -- List and Match Settings
 vim.opt.list = true
-vim.opt.listchars = { tab = '  ', leadmultispace = '│   ' }
+vim.opt.listchars = { tab = "│ ", leadmultispace = "│∙∙∙", trail = "-" }
 vim.opt.showmatch = true
 
 -- GUI and Encoding Settings
 vim.opt.termguicolors = true
-vim.opt.clipboard = 'unnamedplus'
-vim.opt.encoding = 'utf-8'
+vim.schedule(function()
+	vim.opt.clipboard = "unnamedplus"
+end)
+vim.opt.encoding = "utf-8"
 
 -- Search and Case Settings
 vim.opt.hlsearch = true
@@ -54,6 +55,11 @@ vim.opt.smartindent = true
 
 -- Line Number Settings
 vim.opt.number = true
+
+-- Other, shada and swap file disable
+vim.opt.shadafile = "NONE"
+vim.opt.swapfile = false
+
 --0=========================================================================0
 -- █▀█ █▀▀ █▀▄▀█ ▄▀█ █▀█ █▀
 -- █▀▄ ██▄ █░▀░█ █▀█ █▀▀ ▄█
@@ -111,6 +117,10 @@ remap('n', '<Tab>', '<Cmd>bnext<CR>')
 remap('n', '<S-Tab>', '<Cmd>bprevious<CR>')
 -- Quit current buffer
 remap('n', '<leader>q', '<Cmd>bd<CR>')
+-- Comments with '
+remap("n", "'", "<Cmd>norm gcc<CR>")
+remap("v", "'", "gc", { remap = true })
+
 --0=========================================================================0
 -- █░░ ▄▀█ ▀█ █▄█
 -- █▄▄ █▀█ █▄ ░█░
@@ -140,20 +150,10 @@ require("lazy").setup({
     },
     {
         'windwp/nvim-autopairs',
-        config = function()
-            require("nvim-autopairs").setup()
-        end
+        event = "InsertEnter",
+        config = true,
     },
-    {
-        'terrortylor/nvim-comment',
-        config = function()
-            -- remaps
-            remap('n', "'", ':CommentToggle<CR>')
-            remap('v', "'", ':CommentToggle<CR>')
-            require('nvim_comment').setup()
-        end
 
-    },
     --0=============================================================================================0
     -- ▀█▀ █▀▀ █░░ █▀▀ █▀ █▀▀ █▀█ █▀█ █▀▀
     -- ░█░ ██▄ █▄▄ ██▄ ▄█ █▄▄ █▄█ █▀▀ ██▄
@@ -225,7 +225,7 @@ require("lazy").setup({
         build = ":TSUpdate",
         config = function()
             -- ENABLES THIS IF USING WINDOWS:
-            -- require('nvim-treesitter.install').compilers = { 'zig' } 
+            -- require('nvim-treesitter.install').compilers = { 'zig' }
             require('nvim-treesitter.configs').setup {
                 ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query' },
                 -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -249,7 +249,7 @@ require("lazy").setup({
         require('lualine').setup({
             options = {
                 icons_enabled = true,
-                -- theme = 'dracula',
+                theme = 'dracula',
             },
             -- this part shows full path, helps navigate in Oil.
             sections = {
@@ -267,7 +267,7 @@ require("lazy").setup({
         config = function()
             local lspconfig = require('lspconfig')
             local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
             local custom_attach = function(client, bufnr)
                 print('Lsp Attached.')
             end
@@ -306,52 +306,30 @@ require("lazy").setup({
         end
     },
     --0=============================================================================================0
-    -- █▀▀ █▀▄▀█ █▀█
-    -- █▄▄ █░▀░█ █▀▀
+    -- █▄▄ █░░ █ █▄░█ █▄▀
+    -- █▄█ █▄▄ █ █░▀█ █░█
     --0=============================================================================================0
+    -- Blink
     {
-        'hrsh7th/nvim-cmp',
-        event = 'InsertEnter',
-        dependencies = {
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'L3MON4D3/LuaSnip' },
-            -- Other:
-            'hrsh7th/cmp-path',
+        'saghen/blink.cmp',
+        version = '1.*',
+        ---@module 'blink.cmp'
+        ---@type blink.cmp.Config
+        opts = {
+            keymap = {
+                ["<Esc>"] = { "hide", "fallback" },
+                ["<CR>"] = { "accept", "fallback" },
+            },
+            appearance = {
+                nerd_font_variant = 'mono'
+            },
+            completion = { documentation = { auto_show = false } },
+            sources = {
+                default = { 'lsp', 'path', 'snippets', 'buffer' },
+            },
+            fuzzy = { implementation = "prefer_rust_with_warning" }
         },
-        config = function()
-            local cmp = require('cmp')
-            local cmp_ap = require('nvim-autopairs.completion.cmp')
-            local luasnip = require('luasnip')
-            luasnip.config.setup {}
-            cmp.setup({
-                snippet = {
-                    expand = function(args)
-                        require('luasnip').lsp_expand(args.body)
-                    end,
-                },
-                window = {
-                    completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered()
-                },
-                mapping = cmp.mapping.preset.insert({
-                    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-                    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                    ['<C-Space>'] = cmp.mapping.complete(),
-                    ['<C-e>'] = cmp.mapping.abort(),
-                    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-                }),
-                sources = cmp.config.sources({
-                    { name = 'nvim_lsp' },
-                    { name = 'luasnip' },
-                    { name = 'path' },
-                }),
-            })
-            -- bracket completion for lua
-            cmp.event:on(
-                'confirm_done',
-                cmp_ap.on_confirm_done()
-            )
-        end
+        opts_extend = { "sources.default" }
     },
 },
 {
