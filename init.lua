@@ -75,12 +75,14 @@ remap('v', 'x', '"_x')
 remap('n', 'p', 'p==')
 
 -- Page movement up/down
-remap('n', '<C-k>', '<S-Up>zz')
-remap('n', '<C-j>', '<S-Down>zz')
-remap('v', '<C-k>', '<S-Up>zz')
-remap('v', '<C-j>', '<S-Down>zz')
+remap('n', '<C-k>', '<C-u>zz')
+remap('n', '<C-j>', '<C-d>zz')
+remap('v', '<C-k>', '<C-u>zz')
+remap('v', '<C-j>', '<C-d>zz')
 -- Save file
 remap('n', '<C-s>', ':w<CR>')
+-- Quit file
+remap('n', '<C-q>', ':q!<CR>')
 -- Move selected lines with alt arrows like in subl
 remap('v', '<A-k>', ":m '<-2<CR>gv=gv")
 remap('v', '<A-j>', ":m '>+1<CR>gv=gv")
